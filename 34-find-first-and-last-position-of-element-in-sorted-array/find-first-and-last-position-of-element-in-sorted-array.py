@@ -1,17 +1,14 @@
-from typing import List
-
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        indices = []
-
+        first = last = -1
+        
         for i in range(len(nums)):
             if nums[i] == target:
-                indices.append(i)
-
-        if not indices:  # if list is empty
-            return [-1, -1]
-        else:
-            return [indices[0], indices[-1]]
+                if first == -1:   # first time we see target
+                    first = i
+                last = i          # keep updating last index
+        
+        return [first, last]
 
 
 

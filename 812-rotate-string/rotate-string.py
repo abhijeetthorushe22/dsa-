@@ -5,9 +5,6 @@ class Solution:
             return False
 
         
-        if goal in string_1:
-            return True
-        
-        else:
-            return False
+        return goal in string_1
+           
         

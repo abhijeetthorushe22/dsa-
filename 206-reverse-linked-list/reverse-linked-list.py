@@ -4,9 +4,23 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        prev = None
-        while head:
-            head.next, prev, head = prev, head, head.next
-        return prev
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head is None:
+            return None
+        st = []
+
+        curr = head
+        while curr:
+            st.append(curr.val)
+            curr = curr.next
+
+        
+       
+
+        curr = head
+        while curr:
+            curr.val = st.pop()
+            curr = curr.next
+
+        return head
         

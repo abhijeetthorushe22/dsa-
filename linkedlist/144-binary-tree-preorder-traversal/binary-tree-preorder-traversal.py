@@ -5,18 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def __init__(self):
-        self.ans = []
-
-    def preorder(self,root):
-        if root is None:
-            return 
-        
-        self.ans.append(root.val)
-        self.preorder(root.left)
-        self.preorder(root.right)
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        ans = []
-        self.preorder(root)
-        return self.ans
-        
+        if not root:
+            return []
+
+        # Recursive preorder = [root] + left subtree + right subtree
+        return [root.val] + self.preorderTraversal(root.left) + self.preorderTraversal(root.right)

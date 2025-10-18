@@ -9,23 +9,19 @@ class Solution:
         newnode = TreeNode(val)
         if root is None:
             return newnode
-        
         curr = root
-        while curr :
+        while curr:
             if val < curr.val:
-                if curr.left is not None:
+                if curr.left:
                     curr = curr.left
                 else:
                     curr.left = newnode
                     break
             else:
-                if curr.right is not None:
+                if curr.right:
                     curr = curr.right
                 else:
                     curr.right = newnode
                     break
-        
         return root
-            
-
-           
+        

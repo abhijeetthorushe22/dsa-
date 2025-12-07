@@ -1,8 +1,12 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        count = 0
+        seen = set()
+
         for num in nums:
-            count = nums.count(num)
-            if count == 1:
-                return num
+            if num not in seen:
+                seen.add(num)
+            else:
+                seen.remove(num)
+        return seen.pop()
+
         

@@ -3,7 +3,7 @@ class Solution:
         i = 2
         for j in range(len(nums)):
             nums[j]=nums[j]**2
-            j+=1
+            
         nums.sort()
         return nums
         
